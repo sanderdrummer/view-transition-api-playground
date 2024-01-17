@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+h1 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+::view-transition-old(poke-transition) {
+  animation: spin 0.5s ease-in-out;
+}
+
+::view-transition-new(poke-transition) {
+  animation: spin 0.5s ease-in-out;
+}
