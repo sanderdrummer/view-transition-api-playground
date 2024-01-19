@@ -46,6 +46,17 @@ export default function Index() {
             to={`pokemon/${pokemon.name}`}
           />
         ))}
+        <a
+          style={{
+            display: "block",
+            padding: "4rem",
+          }}
+          href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API"
+          target="_blank"
+          rel="noreferrer"
+        >
+          view transition api
+        </a>
       </div>
     </div>
   );
