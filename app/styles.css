@@ -26,11 +26,3 @@ p {
     transform: rotate(360deg);
   }
 }
-
-::view-transition-old(poke-transition) {
-  animation: spin 0.5s ease-in-out;
-}
-
-::view-transition-new(poke-transition) {
-  animation: spin 0.5s ease-in-out;
-}

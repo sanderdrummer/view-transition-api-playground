@@ -1,11 +1,7 @@
 import { LoaderFunctionArgs, json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { z } from "zod";
 import { getImage } from "./_index";
-import {
-  headlineTransitionName,
-  pokemonTransitionName,
-} from "~/components/image-link";
 
 const PokemonDetailsSchema = z.object({
   name: z.string(),
@@ -32,20 +28,8 @@ export default function PokemonDetails() {
 
   return (
     <div>
-      <h1
-        style={{
-          viewTransitionName: headlineTransitionName,
-        }}
-      >
-        {data.name}
-      </h1>
-      <img
-        style={{
-          viewTransitionName: pokemonTransitionName,
-        }}
-        src={getImage(data.id)}
-        alt={data.name}
-      />
+      <h1>{data.name}</h1>
+      <img src={getImage(data.id)} alt={data.name} />
       <p>
         Toffee dessert candy canes cheesecake sweet roll pie cheesecake
         liquorice topping. Fruitcake tiramisu muffin pudding dragée pastry.

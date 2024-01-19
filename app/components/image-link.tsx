@@ -1,7 +1,5 @@
-import { Link, unstable_useViewTransitionState } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 
-export const pokemonTransitionName = "poke-transition";
-export const headlineTransitionName = "headline-transition";
 export const ImageLink = ({
   to,
   src,
@@ -11,7 +9,6 @@ export const ImageLink = ({
   src: string;
   alt: string;
 }) => {
-  const isTransitioning = unstable_useViewTransitionState(to);
   return (
     <Link
       style={{
@@ -23,22 +20,9 @@ export const ImageLink = ({
         borderBottom: "1px solid #eee",
       }}
       to={to}
-      unstable_viewTransition
     >
-      <img
-        src={src}
-        alt={alt}
-        style={{
-          viewTransitionName: isTransitioning ? pokemonTransitionName : "",
-        }}
-      />
-      <p
-        style={{
-          viewTransitionName: isTransitioning ? headlineTransitionName : "",
-        }}
-      >
-        {alt}
-      </p>
+      <img src={src} alt={alt} />
+      <p>{alt}</p>
     </Link>
   );
 };
